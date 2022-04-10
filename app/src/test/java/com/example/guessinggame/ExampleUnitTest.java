@@ -14,4 +14,19 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void run_game()
+    {
+        Game game = new Game();
+
+        boolean guessedCorrect = false;
+        for(int i = 0; i < 10; ++i)
+        {
+            guessedCorrect = game.Check(i + 1);
+            if(guessedCorrect)
+                break;
+        }
+        assertTrue(guessedCorrect);
+    }
 }
